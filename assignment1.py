@@ -38,3 +38,26 @@ for i, j in ND:
 print("\n8-Neighbors:")
 for i, j in N8:
     print(f"({i}, {j}) = {image[i, j]}")
+
+#M-Neighborhood
+NM = N4.copy()      
+
+# Top-left
+if image[x-1, y] == 0 and image[x, y-1] == 0:
+    NM.append((x-1, y-1))
+
+# Top-right
+if image[x-1, y] == 0 and image[x, y+1] == 0:
+    NM.append((x-1, y+1))
+
+# Bottom-left
+if image[x+1, y] == 0 and image[x, y-1] == 0:
+    NM.append((x+1, y-1))
+
+# Bottom-right
+if image[x+1, y] == 0 and image[x, y+1] == 0:
+    NM.append((x+1, y+1))
+
+print("\nm-Neighbors:")
+for i, j in NM:
+    print(f"({i}, {j}) = {image[i, j]}")
